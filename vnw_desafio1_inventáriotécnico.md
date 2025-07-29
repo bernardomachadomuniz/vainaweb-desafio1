@@ -1,11 +1,6 @@
-# Inventário Técnico Detalhado - Ambiente de Rede
+# Inventário Técnico Detalhado 
 
 > ⚠️ **CORREÇÃO TÉCNICA APLICADA**: Durante a coleta, os arquivos `guest_net_ping.txt` e `infra_net_ping.txt` foram executados com redes trocadas. Este inventário foi corrigido baseando-se nos hostnames reais dos dispositivos para garantir precisão técnica.
-
-## Resumo Executivo
-
-| Métrica | Valor |
-|---
 
 ## ⚠️ Observação Metodológica Importante
 
@@ -68,12 +63,12 @@ Esta correção garante a precisão técnica do relatório e não afeta a valida
 |------------|----------|-------------|---------|----------------|-------------------|----------------|-------------------|
 | 10.10.30.1 | - | 2a:9c:a3:4a:20:41 | Gateway | 111, 60787 | RPC | 🟡 Baixo | Gateway da infraestrutura |
 | 10.10.30.2 | 05c2b3804225 | - | Analyst Container | 33282, 52410 | - | 🟢 Seguro | Host de análise |
-| 10.10.30.10 | ftp-server | 7a:a0:f5:c4:6f:4f | Servidor FTP | **21** | **FTP** | 🔴 **ALTO** | **FTP ativo - Verificar acesso anônimo** |
-| 10.10.30.11 | mysql-server | 6e:05:3e:6f:cf:74 | Servidor BD | **3306, 33060** | **MySQL 8.0.43** | 🔴 **ALTO** | **MySQL exposto - Auth: caching_sha2_password** |
-| 10.10.30.15 | samba-server | 6a:88:13:da:bf:d2 | Servidor Arquivos | **139, 445** | **SMB/NetBIOS** | 🟡 Médio | Serviços de compartilhamento |
-| 10.10.30.17 | openldap | 32:65:1b:58:1f:87 | Servidor LDAP | **389, 636** | **LDAP/LDAPS** | 🟡 Médio | Diretório organizacional |
-| 10.10.30.117 | zabbix-server | 76:a2:24:6d:d0:07 | Monitoramento | **80, 10051, 10052** | **Zabbix + Nginx + PHP 7.3.14** | 🟡 Médio | Interface web de monitoramento |
-| 10.10.30.227 | legacy-server | 4a:30:d2:43:df:7e | Servidor Legado | - | Desconhecido | 🟡 Médio | **Requer investigação adicional** |
+| 10.10.30.10 | ftp-server | 7a:a0:f5:c4:6f:4f | Servidor FTP | 21 | FTP | 🔴 ALTO | FTP ativo - Verificar acesso anônimo |
+| 10.10.30.11 | mysql-server | 6e:05:3e:6f:cf:74 | Servidor BD | 3306, 33060 | MySQL 8.0.43 | 🔴 ALTO | MySQL exposto - Auth: caching_sha2_password |
+| 10.10.30.15 | samba-server | 6a:88:13:da:bf:d2 | Servidor Arquivos | 139, 445 | SMB/NetBIOS | 🟡 Médio | Serviços de compartilhamento |
+| 10.10.30.17 | openldap | 32:65:1b:58:1f:87 | Servidor LDAP | 389, 636 | LDAP/LDAPS | 🟡 Médio | Diretório organizacional |
+| 10.10.30.117 | zabbix-server | 76:a2:24:6d:d0:07 | Monitoramento | 80, 10051, 10052 | Zabbix + Nginx + PHP 7.3.14 | 🟡 Médio | Interface web de monitoramento |
+| 10.10.30.227 | legacy-server | 4a:30:d2:43:df:7e | Servidor Legado | - | Desconhecido | 🟡 Médio | Requer investigação adicional |
 
 ---
 
@@ -153,6 +148,6 @@ Headers de segurança: Implementados parcialmente
 
 ---
 
-**Responsável pela Análise**: [Bernardo Machado Muniz]  
+**Responsável pela Análise**: Bernardo Machado Muniz  
 **Data de Geração**: 28/07/2025  
 
