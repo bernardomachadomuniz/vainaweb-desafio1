@@ -235,7 +235,9 @@ A arquitetura atual permite movimentação lateral através do container analyst
 
 ## Anexos
 
-### Evidências em Arquivos 
+### Evidências em Arquivos
+[vnw-evidências-arquivos.zip](https://github.com/user-attachments/files/21517277/vnw-evidencias-arquivos.zip)
+
 - recon-redes.txt: Interfaces de rede identificadas no container analyst
 - recon_ip_maps.txt: Mapeamento ARP de IPs para endereços MAC
 Rede Corporativa (corp_net - 10.10.10.0/24)
@@ -258,6 +260,8 @@ Rede de Convidados (guest_net - 10.10.50.0/24)
 - guest_net_ips_hosts.txt: Mapeamento IP-hostname dos dispositivos pessoais
 
 ### Evidências em Imagens
+[vnw-evidências-imagens.zip](https://github.com/user-attachments/files/21517286/vnw-evidencias-imagens.zip)
+
 Imagem 1 - docker-compose.yml (Estações Corporativas - corp_net):
 Configuração das estações de trabalho WS_001 a WS_004
 Rede corporativa (10.10.10.0/24) com IPs fixos
