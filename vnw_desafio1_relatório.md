@@ -263,149 +263,149 @@ Rede de Convidados (guest_net - 10.10.50.0/24)
 [vnw-evidências-imagens.zip](https://github.com/user-attachments/files/21517286/vnw-evidencias-imagens.zip)
 
 Imagem 1 - docker-compose.yml (Estações Corporativas - corp_net):
-Configuração das estações de trabalho WS_001 a WS_004
-Rede corporativa (10.10.10.0/24) com IPs fixos
-Containers Ubuntu com comando tail -f /dev/null
+- Configuração das estações de trabalho WS_001 a WS_004
+- Rede corporativa (10.10.10.0/24) com IPs fixos
+- Containers Ubuntu com comando tail -f /dev/null
 
 Imagem 2 - docker-compose.yml (Estações Pessoais - guest_net):
-Laptops pessoais (laptop-vastro, laptop-luiz, macbook-aline, notebook-carlos)
-Rede de convidados sem IPs fixos definidos
+- Laptops pessoais (laptop-vastro, laptop-luiz, macbook-aline, notebook-carlos)
+- Rede de convidados sem IPs fixos definidos
 
 Imagem 3 - docker-compose.yml (Infraestrutura - infra_net):
-Serviços críticos: MySQL, Samba, OpenLDAP, Zabbix, Legacy Server
-Rede de infraestrutura (10.10.30.0/24) com IPs fixos
-FTP server com imagem específica stillstudio/pure-ftpd
+- Serviços críticos: MySQL, Samba, OpenLDAP, Zabbix, Legacy Server
+- Rede de infraestrutura (10.10.30.0/24) com IPs fixos
+- FTP server com imagem específica stillstudio/pure-ftpd
 
 Imagem 4 - docker-compose.yml (Configuração de Redes e Analyst):
-Definição das três redes (corp_net, infra_net, guest_net)
-Container analyst com acesso a todas as redes
-Configuração baseada em Kali Linux com ferramentas de pentest
+- Definição das três redes (corp_net, infra_net, guest_net)
+- Container analyst com acesso a todas as redes
+- Configuração baseada em Kali Linux com ferramentas de pentest
 
 Imagem 5 - analyst/Dockerfile (início):
-Dockerfile do container analyst baseado em kalilinux/kali-rolling
-Início da instalação de ferramentas de reconhecimento
+- Dockerfile do container analyst baseado em kalilinux/kali-rolling
+- Início da instalação de ferramentas de reconhecimento
 
 Imagem 6 - analyst/Dockerfile (ferramentas):
-Continuação do Dockerfile com instalação de ferramentas
-Inclui: iproute2, iputils-ping, dnsutils, net-tools, nmap, curl, wget, git
-Download e instalação do RustScan
-Script de wordlist personalizada
+- Continuação do Dockerfile com instalação de ferramentas
+- Inclui: iproute2, iputils-ping, dnsutils, net-tools, nmap, curl, wget, git
+- Download e instalação do RustScan
+- Script de wordlist personalizada
 
 Imagem 7 - Execução do docker-compose up:
-Log de inicialização de todos os containers
-Status "Built/Created/Started" para redes e containers
-Confirmação que o ambiente de lab foi criado com sucesso
+- Log de inicialização de todos os containers
+- Status "Built/Created/Started" para redes e containers
+- Confirmação que o ambiente de lab foi criado com sucesso
 
 Imagem 8 - recon-redes.txt:
-Output do comando ip a | grep inet
-Interfaces de rede identificadas no container analyst
-Redes: 127.0.0.1/8, 10.10.50.6/24, 10.10.30.2/24, 10.10.10.2/24
+- Output do comando ip a | grep inet
+- Interfaces de rede identificadas no container analyst
+- Redes: 127.0.0.1/8, 10.10.50.6/24, 10.10.30.2/24, 10.10.10.2/24
 
 Imagem 9 - Testes de conectividade:
-Ping para diferentes redes (10.10.10.1, 10.10.30.1, 10.10.50.1)
-Confirmação de conectividade entre as redes
-Latências baixas confirmando ambiente local
+- Ping para diferentes redes (10.10.10.1, 10.10.30.1, 10.10.50.1)
+- Confirmação de conectividade entre as redes
+- Latências baixas confirmando ambiente local
 
 Imagem 10 - corp_net_ping.txt:
-Scan Nmap da rede corporativa (10.10.10.0/24)
-Descoberta de hosts: WS_001, WS_002, WS_003, WS_004 e analyst
-6 hosts identificados como ativos
+- Scan Nmap da rede corporativa (10.10.10.0/24)
+- Descoberta de hosts: WS_001, WS_002, WS_003, WS_004 e analyst
+- 6 hosts identificados como ativos
 
 Imagem 11 - guest_net_ping.txt:
-Scan Nmap da rede de convidados (10.10.30.0/24)
-Descoberta de 8 hosts incluindo serviços de infraestrutura
-FTP, MySQL, Samba, OpenLDAP, Zabbix, Legacy servers identificados
+- Scan Nmap da rede de convidados (10.10.30.0/24)
+- Descoberta de 8 hosts incluindo serviços de infraestrutura
+- FTP, MySQL, Samba, OpenLDAP, Zabbix, Legacy servers identificados
 
 Imagem 12 - infra_net_ping.txt:
-Scan Nmap da rede de infraestrutura (10.10.50.0/24)
-Descoberta de laptops pessoais e macbook
-6 hosts identificados na rede de convidados
+- Scan Nmap da rede de infraestrutura (10.10.50.0/24)
+- Descoberta de laptops pessoais e macbook
+- 6 hosts identificados na rede de convidados
 
 Imagem 13 - Execução do RustScan:
-Início do scan de portas com RustScan na rede 10.10.10.0/24
-Banner do RustScan "The Modern Day Port Scanner"
-Preparação para scan de 1000 portas
+- Início do scan de portas com RustScan na rede 10.10.10.0/24
+- Banner do RustScan "The Modern Day Port Scanner"
+- Preparação para scan de 1000 portas
 
 Imagem 14 - infra_net_servico_mysql-info.txt:
-Scan detalhado do MySQL server (10.10.30.11:3306)
-MySQL versão 8.0.43 identificado
-Configurações de autenticação e capacidades do servidor
+- Scan detalhado do MySQL server (10.10.30.11:3306)
+- MySQL versão 8.0.43 identificado
+- Configurações de autenticação e capacidades do servidor
 
 Imagem 15 - infra_net_servico_ldap-rootdse.txt:
-Scan do OpenLDAP (10.10.30.17:389)
-Informações do Root DSE e contextos suportados
-Mecanismos SASL disponíveis (SCRAM-SHA-1, GSSAPI, etc.)
+- Scan do OpenLDAP (10.10.30.17:389)
+- Informações do Root DSE e contextos suportados
+- Mecanismos SASL disponíveis (SCRAM-SHA-1, GSSAPI, etc.)
 
 Imagem 16 - infra_net_servico_smb.txt:
-Scan do servidor Samba (10.10.30.15:445)
-Serviço Microsoft-DS identificado
-Porta 445/tcp aberta
+- Scan do servidor Samba (10.10.30.15:445)
+- Serviço Microsoft-DS identificado
+- Porta 445/tcp aberta
 
 Imagem 17 - Teste de conectividade HTTP:
-Tentativas de conexão HTTP para 10.10.30.117
-Primeira tentativa sem resposta, segunda com conteúdo
-Possível servidor web no Zabbix
+- Tentativas de conexão HTTP para 10.10.30.117
+- Primeira tentativa sem resposta, segunda com conteúdo
+- Possível servidor web no Zabbix
 
 Imagem 18 - Resumo dos hosts descobertos:
-Lista consolidada de todos os hosts nas três redes
-Status "Up" para todos os sistemas
-Mapeamento completo do ambiente
+- Lista consolidada de todos os hosts nas três redes
+- Status "Up" para todos os sistemas
+- Mapeamento completo do ambiente
 
 Imagem 19 - Listagem de IPs por rede:
-Extração organizada dos IPs de cada rede
-corp_net_ips.txt: 6 IPs da rede corporativa
-infra_net_ips.txt: 8 IPs da infraestrutura
-guest_net_ips.txt: 6 IPs da rede de convidados
+- Extração organizada dos IPs de cada rede
+- corp_net_ips.txt: 6 IPs da rede corporativa
+- infra_net_ips.txt: 8 IPs da infraestrutura
+- guest_net_ips.txt: 6 IPs da rede de convidados
 
 Imagem 20 - Scan de portas com RustScan:
-Execução do RustScan nos arquivos de IPs gerados
-Geração dos arquivos de portas abertas por rede
-Preparação para análise detalhada dos serviços
+- Execução do RustScan nos arquivos de IPs gerados
+- Geração dos arquivos de portas abertas por rede
+- Preparação para análise detalhada dos serviços
 
 Imagem 21 -  Scan inicial de descoberta de serviços na infraestrutura
-Nmap scan do FTP server (10.10.30.10) - porta 21/tcp aberta
-Nmap scan do MySQL server (10.10.30.11) - porta 3306/tcp aberta com informações detalhadas do MySQL 8.0.43
-Início do scan LDAP server (10.10.30.17) - porta 389/tcp
+- Nmap scan do FTP server (10.10.30.10) - porta 21/tcp aberta
+- Nmap scan do MySQL server (10.10.30.11) - porta 3306/tcp aberta com informações detalhadas do MySQL 8.0.43
+- Início do scan LDAP server (10.10.30.17) - porta 389/tcp
 
 Imagem 22 - Continuação do scan LDAP e descoberta SMB
-Detalhes completos do servidor OpenLDAP (10.10.30.17) - porta 389/tcp com informações de schema e extensões suportadas
-Scan do Samba server (10.10.30.15) - porta 445/tcp aberta (microsoft-ds)
+- Detalhes completos do servidor OpenLDAP (10.10.30.17) - porta 389/tcp com informações de schema e extensões suportadas
+- Scan do Samba server (10.10.30.15) - porta 445/tcp aberta (microsoft-ds)
 
 Imagem 23 - Teste de conectividade HTTP
-Teste curl no servidor web (10.10.30.117) - HTTP 200 OK
-Headers revelam nginx com PHP 7.3.14 e sessão PHP ativa
-Comando para salvar resposta em arquivo txt
+- Teste curl no servidor web (10.10.30.117) - HTTP 200 OK
+- Headers revelam nginx com PHP 7.3.14 e sessão PHP ativa
+- Comando para salvar resposta em arquivo txt
 
 Imagem 24 - Download de conteúdo do Zabbix
-Curl baixando página completa do Zabbix (10.10.30.117)
-3412 bytes transferidos com sucesso
+- Curl baixando página completa do Zabbix (10.10.30.117)
+- 3412 bytes transferidos com sucesso
 
 Imagem 25 - Descoberta de rede através de ARP
-Comando arp -a mostrando mapeamento de IPs para MACs
-Múltiplos hosts descobertos nas redes corporativa e de infraestrutura
-Salvamento dos resultados em recon_ip_maps.txt
+- Comando arp -a mostrando mapeamento de IPs para MACs
+- Múltiplos hosts descobertos nas redes corporativa e de infraestrutura
+- Salvamento dos resultados em recon_ip_maps.txt
 
 Imagem 26 - Configuração de DNS
-Conteúdo do arquivo /etc/resolv.conf
-Nameserver configurado para 127.0.0.11 (Docker internal)
-Configurações baseadas no host file interno
+- Conteúdo do arquivo /etc/resolv.conf
+- Nameserver configurado para 127.0.0.11 (Docker internal)
+- Configurações baseadas no host file interno
 
 Imagem 27 - Scan da rede corporativa (10.10.10.0/24)
-RPC service na porta 111/tcp em múltiplos hosts
-Descoberta de workstations (WS_001, WS_002, WS_003, WS_004)
-Todos os hosts com portas em estado "ignored"
+- RPC service na porta 111/tcp em múltiplos hosts
+- Descoberta de workstations (WS_001, WS_002, WS_003, WS_004)
+- Todos os hosts com portas em estado "ignored"
 
 Imagem 28 - Scan da rede guest/infra (10.10.30.0/24)
-Confirmação dos serviços já identificados:
-FTP (10.10.30.10), MySQL (10.10.30.11), Samba (10.10.30.15)
-OpenLDAP (10.10.30.17) com portas 389 e 636
-Zabbix web server (10.10.30.117) - porta 80/tcp
-Legacy server (10.10.30.227) - todos os ports em ignored state
+- Confirmação dos serviços já identificados:
+- FTP (10.10.30.10), MySQL (10.10.30.11), Samba (10.10.30.15)
+- OpenLDAP (10.10.30.17) com portas 389 e 636
+- Zabbix web server (10.10.30.117) - porta 80/tcp
+- Legacy server (10.10.30.227) - todos os ports em ignored state
 
 Imagem 29 - Scan da rede infra estendida (10.10.50.0/24)
-RPC service na porta 111/tcp no primeiro host
-Múltiplos dispositivos cliente (notebook-carlos, laptop-vastro, laptop-luiz, macbook-aline)
-Todos os dispositivos com 1000 portas em estado "ignored"
+- RPC service na porta 111/tcp no primeiro host
+- Múltiplos dispositivos cliente (notebook-carlos, laptop-vastro, laptop-luiz, macbook-aline)
+- Todos os dispositivos com 1000 portas em estado "ignored"
 
 
 ### Observação sobre Nomenclatura
