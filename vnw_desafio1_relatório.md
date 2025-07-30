@@ -127,7 +127,7 @@ Ambiente Docker simulado com múltiplos hosts distribuídos em redes segmentadas
                         │ eth1: .30.30.2  │
                         └─────────────────┘
 ```
-
+<img width="1571" height="931" alt="vnw-diagrama drawio" src="https://github.com/user-attachments/assets/41e1f400-c79d-4b87-b882-8f4beb7c31b9" />
 ---
 
 ## Diagnóstico (Achados)
