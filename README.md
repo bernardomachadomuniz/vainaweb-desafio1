@@ -112,6 +112,7 @@ projeto/
 - **14 portas abertas** identificadas na infraestrutura
 - **6 serviços críticos** mapeados e analisados
 - **100% conectividade** entre segmentos de rede
+- **Troca de nomenclatura identificada**: guest_net (10.10.50.0/24) e infra_net (10.10.30.0/24) com nomes invertidos nos arquivos
 - **Inventário completo** da infraestrutura simulada
 
 ## 🛡️ Ferramentas Utilizadas
